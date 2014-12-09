@@ -55,20 +55,20 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
         var h = new createjs.Shape();
         switch (this.direction) {
           case "down":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 3.5).lineTo(a / 2 - 7, b / 2 - 3.5).lineTo(a / 2 + 7, b / 2 - 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 7).lineTo(a / 2 - 14, b / 2 - 7).lineTo(a / 2 + 14, b / 2 - 7).closePath().endFill();
             break;
 
           case "left":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 3.5, b / 2).lineTo(a / 2 + 3.5, b / 2 - 7).lineTo(a / 2 + 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 7, b / 2).lineTo(a / 2 + 7, b / 2 - 14).lineTo(a / 2 + 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "right":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 3.5, b / 2).lineTo(a / 2 - 3.5, b / 2 - 7).lineTo(a / 2 - 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 7, b / 2).lineTo(a / 2 - 7, b / 2 - 14).lineTo(a / 2 - 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "up":
           default:
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath().endFill();
             break;
         }
         h.set({

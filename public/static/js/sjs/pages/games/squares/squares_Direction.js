@@ -34,7 +34,7 @@ define("js/sjs/pages/games/squares/squares_Direction", [], function(a, b, c) {
     e.prototype.__init = function() {
         var a = this.width, b = this.height;
         var c = new createjs.Shape();
-        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath();
+        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath();
         if (this.direction == "down") c.setTransform(0, 0, 1, 1, 180, 0, 0, a, b); else if (this.direction == "left") {
             c.setTransform(0, 0, 1, 1, -90, 0, 0, a, 0);
         } else if (this.direction == "right") {

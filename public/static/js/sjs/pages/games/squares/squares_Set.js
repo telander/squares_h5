@@ -3,7 +3,7 @@ define("js/sjs/pages/games/squares/squares_Set", [ "./squares_Chess", "./squares
     var e = a("./squares_Direction");
     var f = a("./squares_StopPoint");
     var g = function(a, b, c, d, e, f, g) {
-        this.singleWidth = c || 40;
+        this.singleWidth = c || 80;
         this.config = a || {};
         this.colors = b;
         this.stage = e;
@@ -279,20 +279,20 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
         var h = new createjs.Shape();
         switch (this.direction) {
           case "down":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 3.5).lineTo(a / 2 - 7, b / 2 - 3.5).lineTo(a / 2 + 7, b / 2 - 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 7).lineTo(a / 2 - 14, b / 2 - 7).lineTo(a / 2 + 14, b / 2 - 7).closePath().endFill();
             break;
 
           case "left":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 3.5, b / 2).lineTo(a / 2 + 3.5, b / 2 - 7).lineTo(a / 2 + 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 7, b / 2).lineTo(a / 2 + 7, b / 2 - 14).lineTo(a / 2 + 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "right":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 3.5, b / 2).lineTo(a / 2 - 3.5, b / 2 - 7).lineTo(a / 2 - 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 7, b / 2).lineTo(a / 2 - 7, b / 2 - 14).lineTo(a / 2 - 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "up":
           default:
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath().endFill();
             break;
         }
         h.set({
@@ -481,7 +481,7 @@ define("js/sjs/pages/games/squares/squares_Direction", [], function(a, b, c) {
     e.prototype.__init = function() {
         var a = this.width, b = this.height;
         var c = new createjs.Shape();
-        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath();
+        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath();
         if (this.direction == "down") c.setTransform(0, 0, 1, 1, 180, 0, 0, a, b); else if (this.direction == "left") {
             c.setTransform(0, 0, 1, 1, -90, 0, 0, a, 0);
         } else if (this.direction == "right") {
@@ -527,11 +527,11 @@ define("js/sjs/pages/games/squares/squares_StopPoint", [], function(a, b, c) {
     d.prototype.__init = function() {
         var a = this.width, b = this.height;
         var c = new createjs.Shape();
-        c.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 12);
+        c.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 24);
         var d = new createjs.Shape();
-        d.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(a / 2, b / 2, 8);
+        d.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(a / 2, b / 2, 16);
         var e = new createjs.Shape();
-        e.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 6);
+        e.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 12);
         this.container.addChild(c, d, e);
         this.container.cache(0, 0, this.width, this.height);
         return this;

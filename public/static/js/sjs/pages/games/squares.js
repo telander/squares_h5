@@ -11,7 +11,7 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
     var r;
     var s, t;
     var u, v;
-    var w = 40;
+    var w = 80;
     $(function() {
         $(window).on("resize", function() {
             var a = $("body").width();
@@ -91,38 +91,47 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
     function B() {
         headerWidth = $(".canvas-header-wrapper").width();
         headerHeight = $(".canvas-header-wrapper").height();
-        $("#canvasHeader").prop("width", headerWidth).prop("height", headerHeight);
+        $("#canvasHeader").prop("width", 2 * headerWidth).prop("height", 2 * headerHeight).css({
+            width: headerWidth + "px",
+            height: headerHeight + "px"
+        });
         s = new createjs.Stage("canvasHeader");
         createjs.Touch.enable(s);
         bottomWidth = $(".canvas-bottom-wrapper").width();
         bottomHeight = $(".canvas-bottom-wrapper").height();
-        $("#canvasBottom").prop("width", bottomWidth).prop("height", bottomHeight);
+        $("#canvasBottom").prop("width", 2 * bottomWidth).prop("height", 2 * bottomHeight).css({
+            width: bottomWidth + "px",
+            height: bottomHeight + "px"
+        });
         t = new createjs.Stage("canvasBottom");
         createjs.Touch.enable(t);
-        u = $(".canvas-stage-wrapper").width();
-        v = $(".canvas-stage-wrapper").height();
-        $("#canvasStage").prop("width", u).prop("height", v);
+        u = 2 * $(".canvas-stage-wrapper").width();
+        v = 2 * $(".canvas-stage-wrapper").height();
+        $("#canvasStage").prop("width", u).prop("height", v).css({
+            width: u / 2 + "px",
+            height: v / 2 + "px"
+        });
         k = new createjs.Stage("canvasStage");
-        var a = new createjs.Text("Squares", "bold 48px Calibri", "#2a3e51");
+        var a = new createjs.Text("Squares", "bold 96px Calibri", "#2a3e51");
         a.textAlign = "center";
-        var b = new createjs.Text("Pu", "bold 36px Calibri", "#2a3e51");
+        var b = new createjs.Text("Pu", "bold 72px Calibri", "#2a3e51");
         b.textAlign = "center";
-        b.x = -36;
-        b.y = 48;
-        var c = new createjs.Text("zz", "bold 36px Calibri", "#e37c22");
+        b.x = -72;
+        b.y = 96;
+        var c = new createjs.Text("zz", "bold 72px Calibri", "#e37c22");
         c.textAlign = "center";
         c.x = 0;
-        c.y = 48;
-        var d = new createjs.Text("le", "bold 36px Calibri", "#2a3e51");
+        c.y = 96;
+        var d = new createjs.Text("le", "bold 72px Calibri", "#2a3e51");
         d.textAlign = "center";
-        d.x = 32;
-        d.y = 48;
+        d.x = 64;
+        d.y = 96;
         var e = new createjs.Container();
         e.addChild(a, b, c, d);
         e.textBaseline = "middle";
         e.set({
             x: u / 2,
-            y: v / 2 - 42
+            y: v / 2 - 84
         });
         console.log(e.getBounds());
         k.addChild(e);
@@ -140,13 +149,13 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
         var f = $("#canvasBottom").prop("height");
         t.removeAllChildren();
         if (b) {
-            var i = new createjs.Text("刷新", "20px Calibri", "#2a3e51");
+            var i = new createjs.Text("刷新", "40px Calibri", "#2a3e51");
             var j = {
                 width: i.getMeasuredWidth(),
                 height: i.getMeasuredHeight()
             };
             i.set({
-                x: e - 10 - j.width,
+                x: e - 20 - j.width,
                 y: f / 2 - j.height / 2
             });
             i.on("click", function(a, b) {
@@ -155,13 +164,13 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
             t.addChild(i);
         }
         if (c) {
-            var k = new createjs.Text("选关", "20px Calibri", "#2a3e51");
+            var k = new createjs.Text("选关", "40px Calibri", "#2a3e51");
             var j = {
                 width: k.getMeasuredWidth(),
                 height: k.getMeasuredHeight()
             };
             k.set({
-                x: 10,
+                x: 20,
                 y: f / 2 - j.height / 2
             });
             k.on("click", function(a, b) {
@@ -173,10 +182,10 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
             t.addChild(k);
         }
         if (d) {
-            var l = new createjs.Text("返回", "20px Calibri", "#2a3e51");
+            var l = new createjs.Text("返回", "40px Calibri", "#2a3e51");
             var j = l.getBounds();
             l.set({
-                x: 10,
+                x: 20,
                 y: f / 2 - j.height / 2
             });
             t.addChild(l);
@@ -188,7 +197,7 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
         var b = $("#canvasHeader").prop("width");
         var c = $("#canvasHeader").prop("height");
         if (s.getNumChildren() == 0) {
-            var d = new createjs.Text("Level " + a, "18px Calibri", "#2a3e51");
+            var d = new createjs.Text("Level " + a, "36px Calibri", "#2a3e51");
             var e = d.getBounds();
             d.set({
                 x: b / 2 - e.width / 2,
@@ -255,8 +264,8 @@ define("js/sjs/pages/games/squares", [ "../../modules/isMobile", "../../modules/
                 G();
             }, k, u, v);
             a.set({
-                x: u / 2 - a.getWidth() / 2 + 20,
-                y: v / 2 - a.getHeight() / 2 + 20
+                x: u / 2 - a.getWidth() / 2 + 40,
+                y: v / 2 - a.getHeight() / 2 + 40
             });
             k.removeAllChildren();
             k.clear();
@@ -368,7 +377,7 @@ define("js/sjs/pages/games/squares/squares_Set", [ "js/sjs/pages/games/squares/s
     var e = a("js/sjs/pages/games/squares/squares_Direction");
     var f = a("js/sjs/pages/games/squares/squares_StopPoint");
     var g = function(a, b, c, d, e, f, g) {
-        this.singleWidth = c || 40;
+        this.singleWidth = c || 80;
         this.config = a || {};
         this.colors = b;
         this.stage = e;
@@ -644,20 +653,20 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
         var h = new createjs.Shape();
         switch (this.direction) {
           case "down":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 3.5).lineTo(a / 2 - 7, b / 2 - 3.5).lineTo(a / 2 + 7, b / 2 - 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 + 7).lineTo(a / 2 - 14, b / 2 - 7).lineTo(a / 2 + 14, b / 2 - 7).closePath().endFill();
             break;
 
           case "left":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 3.5, b / 2).lineTo(a / 2 + 3.5, b / 2 - 7).lineTo(a / 2 + 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 - 7, b / 2).lineTo(a / 2 + 7, b / 2 - 14).lineTo(a / 2 + 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "right":
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 3.5, b / 2).lineTo(a / 2 - 3.5, b / 2 - 7).lineTo(a / 2 - 3.5, b / 2 + 7).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2 + 7, b / 2).lineTo(a / 2 - 7, b / 2 - 14).lineTo(a / 2 - 7, b / 2 + 14).closePath().endFill();
             break;
 
           case "up":
           default:
-            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath().endFill();
+            h.graphics.setStrokeStyle(1, "round").beginFill(d).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath().endFill();
             break;
         }
         h.set({
@@ -846,7 +855,7 @@ define("js/sjs/pages/games/squares/squares_Direction", [], function(a, b, c) {
     e.prototype.__init = function() {
         var a = this.width, b = this.height;
         var c = new createjs.Shape();
-        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 3.5).lineTo(a / 2 - 7, b / 2 + 3.5).lineTo(a / 2 + 7, b / 2 + 3.5).closePath();
+        c.graphics.beginFill(this.color).moveTo(a / 2, b / 2 - 7).lineTo(a / 2 - 14, b / 2 + 7).lineTo(a / 2 + 14, b / 2 + 7).closePath();
         if (this.direction == "down") c.setTransform(0, 0, 1, 1, 180, 0, 0, a, b); else if (this.direction == "left") {
             c.setTransform(0, 0, 1, 1, -90, 0, 0, a, 0);
         } else if (this.direction == "right") {
@@ -892,11 +901,11 @@ define("js/sjs/pages/games/squares/squares_StopPoint", [], function(a, b, c) {
     d.prototype.__init = function() {
         var a = this.width, b = this.height;
         var c = new createjs.Shape();
-        c.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 12);
+        c.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 24);
         var d = new createjs.Shape();
-        d.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(a / 2, b / 2, 8);
+        d.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(a / 2, b / 2, 16);
         var e = new createjs.Shape();
-        e.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 6);
+        e.graphics.beginFill(this.color).drawCircle(a / 2, b / 2, 12);
         this.container.addChild(c, d, e);
         this.container.cache(0, 0, this.width, this.height);
         return this;

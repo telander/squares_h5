@@ -23,7 +23,7 @@ define(function(require, exports, module) {
 	//
 	var totalWidth, totalHeight;
 
-	var squareLen=40;
+	var squareLen=80;
 
 	$(function() {
 		$(window).on("resize", function() {
@@ -33,7 +33,7 @@ define(function(require, exports, module) {
 			if($height > $width) {
 				$("body").css({
 					minHeight: "418px",
-					overflowY: "auto",
+					overflowY: "auto"
 				});
 				if($resizediv.length>0) {
 					$resizediv.hide();
@@ -42,7 +42,7 @@ define(function(require, exports, module) {
 			else if($height < $width) {
 				$("body").css({
 					minHeight: "100%",
-					overflowY: "hidden",
+					overflowY: "hidden"
 				});
 				if($resizediv.length > 0) {
 					$resizediv.show();
@@ -58,7 +58,7 @@ define(function(require, exports, module) {
 						left: 0,
 						right: 0,
 						zIndex: 50000,
-						background: 'rgba(0,0,0,0.99)',
+						background: 'rgba(0,0,0,0.99)'
 					});
 					$(".resize__div__p").css({
 						position: "absolute",
@@ -70,7 +70,7 @@ define(function(require, exports, module) {
 						marginLeft: "-62px",
 						marginTop: "-125px",
 						background: "url(" + window.THIS.HOST + "static/css/imgs/rotate.png) no-repeat",
-						backgroundSize: "100% 100%",
+						backgroundSize: "100% 100%"
 					});
 				}
 			}
@@ -116,44 +116,44 @@ define(function(require, exports, module) {
 		// head stage
 		headerWidth = $(".canvas-header-wrapper").width();
 		headerHeight = $(".canvas-header-wrapper").height();
-		$("#canvasHeader").prop('width', headerWidth).prop('height', headerHeight);
+		$("#canvasHeader").prop('width', 2 * headerWidth).prop('height', 2 * headerHeight).css({"width": headerWidth + "px", "height": headerHeight + "px"});
 		headStage = new createjs.Stage("canvasHeader");
 		createjs.Touch.enable(headStage);
 
 		// bottom stage
 		bottomWidth = $(".canvas-bottom-wrapper").width();
 		bottomHeight = $(".canvas-bottom-wrapper").height();
-		$("#canvasBottom").prop('width', bottomWidth).prop('height', bottomHeight);
+		$("#canvasBottom").prop('width', 2 * bottomWidth).prop('height', 2 * bottomHeight).css({"width": bottomWidth + "px", "height": bottomHeight + "px"});
 		footStage = new createjs.Stage("canvasBottom");
 		createjs.Touch.enable(footStage);
 
-		totalWidth = $(".canvas-stage-wrapper").width();
-		totalHeight = $(".canvas-stage-wrapper").height();
+		totalWidth = 2 * $(".canvas-stage-wrapper").width();
+		totalHeight = 2 * $(".canvas-stage-wrapper").height();
 		
-		$("#canvasStage").prop('width', totalWidth).prop('height', totalHeight);
+		$("#canvasStage").prop('width', totalWidth).prop('height', totalHeight).css({"width": totalWidth / 2 + "px", "height": totalHeight / 2 + "px"});
 		globalStage = new createjs.Stage("canvasStage");
-		var textTitle = new createjs.Text('Squares', 'bold 48px Calibri', '#2a3e51');
+		var textTitle = new createjs.Text('Squares', 'bold 96px Calibri', '#2a3e51');
 		textTitle.textAlign = 'center';
-		var textSubTitle = new createjs.Text('Pu', 'bold 36px Calibri', '#2a3e51');
+		var textSubTitle = new createjs.Text('Pu', 'bold 72px Calibri', '#2a3e51');
 		textSubTitle.textAlign = 'center';
-		textSubTitle.x = -36;
-		textSubTitle.y = 48;
-		var textSubTitle2 = new createjs.Text('zz', 'bold 36px Calibri', '#e37c22');
+		textSubTitle.x = -72;
+		textSubTitle.y = 96;
+		var textSubTitle2 = new createjs.Text('zz', 'bold 72px Calibri', '#e37c22');
 		textSubTitle2.textAlign = 'center';
 		textSubTitle2.x = 0;
-		textSubTitle2.y = 48;
+		textSubTitle2.y = 96;
 
-		var textSubTitle3 = new createjs.Text('le', 'bold 36px Calibri', '#2a3e51');
+		var textSubTitle3 = new createjs.Text('le', 'bold 72px Calibri', '#2a3e51');
 		textSubTitle3.textAlign = 'center';
-		textSubTitle3.x = 32;
-		textSubTitle3.y = 48;
+		textSubTitle3.x = 64;
+		textSubTitle3.y = 96;
 
 		var container = new createjs.Container();
 	    container.addChild(textTitle, textSubTitle, textSubTitle2, textSubTitle3);
 	    container.textBaseline = 'middle';
 	    container.set({
 	    	x: totalWidth / 2,
-	    	y: totalHeight / 2 - 42,
+	    	y: totalHeight / 2 - 84
 	    });
 
 	    console.log(container.getBounds());
@@ -191,11 +191,11 @@ define(function(require, exports, module) {
 
 		footStage.removeAllChildren();
 		if(refresh) {
-			var refreshText = new createjs.Text("刷新", '20px Calibri', '#2a3e51');
+			var refreshText = new createjs.Text("刷新", '40px Calibri', '#2a3e51');
 			// var b = refreshText.getBounds();
 			var b = {width: refreshText.getMeasuredWidth(), height: refreshText.getMeasuredHeight()};
 			refreshText.set({
-				x: width - 10 - b.width,
+				x: width - 20 - b.width,
 				y: height / 2 - b.height / 2
 			});
 			// var hit = new createjs.Shape();
@@ -208,11 +208,11 @@ define(function(require, exports, module) {
 			footStage.addChild(refreshText);
 		}
 		if(openChoose) {
-			var openChooseText = new createjs.Text("选关", '20px Calibri', '#2a3e51');
+			var openChooseText = new createjs.Text("选关", '40px Calibri', '#2a3e51');
 			// var b = openChooseText.getBounds();
 			var b = {width: openChooseText.getMeasuredWidth(), height: openChooseText.getMeasuredHeight()};
 			openChooseText.set({
-				x: 10,
+				x: 20,
 				y: height / 2 - b.height / 2
 			});
 			// var hit = new createjs.Shape();
@@ -227,10 +227,10 @@ define(function(require, exports, module) {
 			footStage.addChild(openChooseText);
 		}
 		if(closeChoose) {
-			var closeChooseText = new createjs.Text("返回", '20px Calibri', '#2a3e51');
+			var closeChooseText = new createjs.Text("返回", '40px Calibri', '#2a3e51');
 			var b = closeChooseText.getBounds();
 			closeChooseText.set({
-				x: 10,
+				x: 20,
 				y: height / 2 - b.height / 2
 			});
 			footStage.addChild(closeChooseText);
@@ -243,12 +243,12 @@ define(function(require, exports, module) {
 		var width = $("#canvasHeader").prop('width');
 		var height = $("#canvasHeader").prop('height');
 		if(headStage.getNumChildren() == 0) {
-			var headText = new createjs.Text('Level ' + level, '18px Calibri', '#2a3e51');
+			var headText = new createjs.Text('Level ' + level, '36px Calibri', '#2a3e51');
 			var b = headText.getBounds();
 			headText.set({
 				// textAlign: 'center',
 				x: width / 2 - b.width / 2,
-				y: height / 2 - b.height / 2,
+				y: height / 2 - b.height / 2
 			});
 
 			var hint = new createjs.Shape();
@@ -333,8 +333,8 @@ define(function(require, exports, module) {
 				// y: totalHeight / 2,
 				// regX: 0,
 				// regY: 0,
-				x: totalWidth / 2 - curSet.getWidth() / 2 + 20,
-				y: totalHeight / 2 - curSet.getHeight() / 2 + 20,
+				x: totalWidth / 2 - curSet.getWidth() / 2 + 40,
+				y: totalHeight / 2 - curSet.getHeight() / 2 + 40
 			});
 			globalStage.removeAllChildren();
 			globalStage.clear();

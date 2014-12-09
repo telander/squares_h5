@@ -71,17 +71,17 @@ define(function(require, exports, module) {
 		// 等腰30度三角形，高固定
 		switch(this.direction) {
 			case "down":
-				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2, height / 2 + 3.5).lineTo(width / 2 - 7, height / 2 - 3.5).lineTo(width / 2 + 7, height / 2 - 3.5).closePath().endFill();
+				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2, height / 2 + 7).lineTo(width / 2 - 14, height / 2 - 7).lineTo(width / 2 + 14, height / 2 - 7).closePath().endFill();
 				break;
 			case "left":
-				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2 - 3.5, height / 2).lineTo(width / 2 + 3.5, height / 2 - 7).lineTo(width / 2 + 3.5, height / 2 + 7).closePath().endFill();
+				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2 - 7, height / 2).lineTo(width / 2 + 7, height / 2 - 14).lineTo(width / 2 + 7, height / 2 + 14).closePath().endFill();
 				break;
 			case "right":
-				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2 + 3.5, height / 2).lineTo(width / 2 - 3.5, height / 2 - 7).lineTo(width / 2 - 3.5, height / 2 + 7).closePath().endFill();
+				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2 + 7, height / 2).lineTo(width / 2 - 7, height / 2 - 14).lineTo(width / 2 - 7, height / 2 + 14).closePath().endFill();
 				break;
 			case "up":
 			default:
-				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2, height / 2 - 3.5).lineTo(width / 2 - 7, height / 2 + 3.5).lineTo(width / 2 + 7, height / 2 + 3.5).closePath().endFill();
+				shape4.graphics.setStrokeStyle(1, "round").beginFill(triColor).moveTo(width / 2, height / 2 - 7).lineTo(width / 2 - 14, height / 2 + 7).lineTo(width / 2 + 14, height / 2 + 7).closePath().endFill();
 				break;
 		}
 			

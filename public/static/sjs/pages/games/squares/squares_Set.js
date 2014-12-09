@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 	var StopPoint = require("./squares_StopPoint.js");
 
 	var Sets = function(config, colors, r, finishFn, stage, parentWidth, parentHeight) {
-		this.singleWidth = r || 40;
+		this.singleWidth = r || 80;
 		this.config = config || {};
 
 		this.colors = colors;
@@ -80,14 +80,14 @@ define(function(require, exports, module) {
 			scaleX: 0,
 			scaleY: 0,
 			regX: child.width / 2,
-			regY: child.height / 2,
+			regY: child.height / 2
 		});
 		self.container.addChild(child.getContainer());
 		createjs.Tween.get(child.getContainer())
 		.wait(no * 200)
 		.to({
 			scaleX: 1,
-			scaleY: 1,
+			scaleY: 1
 		}, 200, createjs.Ease.linear)
 		.call(function() {
 			if(no == self.sets.length) {
@@ -235,11 +235,11 @@ define(function(require, exports, module) {
 			.wait(0)
 			.to({
 				scaleX: 1.1,
-				scaleY: 1.1,
+				scaleY: 1.1
 			}, 50, createjs.Ease.linear)
 			.to({
 				scaleX: 0,
-				scaleY: 0,
+				scaleY: 0
 			}, 220, createjs.Ease.linear)
 			.call(function(){
 				finishNo++;

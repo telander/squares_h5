@@ -39,11 +39,11 @@ define(function(require, exports, module) {
 		var width = this.width, height = this.height;
 		
 		var shape1 = new createjs.Shape();
-		shape1.graphics.beginFill(this.color).drawCircle(width / 2, height / 2, 12);
+		shape1.graphics.beginFill(this.color).drawCircle(width / 2, height / 2, 24);
 		var shape2 = new createjs.Shape();
-		shape2.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(width / 2, height / 2, 8);
+		shape2.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawCircle(width / 2, height / 2, 16);
 		var shape3 = new createjs.Shape();
-		shape3.graphics.beginFill(this.color).drawCircle(width / 2, height / 2, 6);
+		shape3.graphics.beginFill(this.color).drawCircle(width / 2, height / 2, 12);
 
 
 		this.container.addChild(shape1, shape2, shape3);

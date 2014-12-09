@@ -45,7 +45,7 @@ define(function(require, exports, module) {
 		
 		var shape4 = new createjs.Shape();
 		// 等腰30度三角形，高固定8.，默认向上
-		shape4.graphics.beginFill(this.color).moveTo(width / 2, height / 2 - 3.5).lineTo(width / 2 - 7, height / 2 + 3.5).lineTo(width / 2 + 7, height / 2 + 3.5).closePath();
+		shape4.graphics.beginFill(this.color).moveTo(width / 2, height / 2 - 7).lineTo(width / 2 - 14, height / 2 + 7).lineTo(width / 2 + 14, height / 2 + 7).closePath();
 		if(this.direction == "down")
 			shape4.setTransform(0, 0, 1, 1, 180, 0, 0, width, height);
 		else if(this.direction == "left") {
