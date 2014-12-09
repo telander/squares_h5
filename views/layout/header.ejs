@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <script src="<%= thisParam.host %>static/lib/modernizr.custom.58036.js"></script>
+        <link href="<%= thisParam.host %>static/css/main.css?t=<%= thisParam.staticVersion %>" type="text/css" rel="stylesheet" media="screen">
+        <% if(typeof pageCss != "undefined"){ %>
+        <link href="<%= thisParam.host %>static/css/pages/<%= pageCss %>.css?t=<%= thisParam.staticVersion %>" type="text/css" rel="stylesheet" media="screen">
+        <% } %>
+    </head>
+    <body>
