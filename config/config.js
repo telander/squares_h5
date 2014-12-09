@@ -1,4 +1,3 @@
-var prefix = "/Users/shanbin/local/webroot/personal/nodeExpressFramework/public/static/imgs";
 module.exports = {
 	port: 8887,
 	cookieSecret: "MhxzKhl",
