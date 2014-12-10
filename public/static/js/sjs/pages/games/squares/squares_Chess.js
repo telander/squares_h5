@@ -95,7 +95,7 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
     };
     e.prototype.drawOffAStop = function() {
         var a = this.container.getChildAt(1);
-        a.graphics.clear().beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(3, 3, this.width - 6, this.height - 6, 5);
+        a.graphics.clear().beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(6, 6, this.width - 12, this.height - 12, 5);
         this.container.cache(0, 0, this.width, this.height);
     };
     e.prototype.drawOnADirection = function(a) {
