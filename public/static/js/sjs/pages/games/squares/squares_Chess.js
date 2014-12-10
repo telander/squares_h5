@@ -46,11 +46,11 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
         this.container.uncache();
         var c = "rgba(" + parseInt(this.color.substr(1, 2), 16) + ", " + parseInt(this.color.substr(3, 2), 16) + ", " + parseInt(this.color.substr(5, 2), 16) + ", 0.8)";
         var e = new createjs.Shape();
-        e.graphics.beginFill(this.color).drawRoundRect(1, 1, a - 2, b - 2, 5);
+        e.graphics.beginFill(this.color).drawRoundRect(2, 2, a - 4, b - 4, 5);
         var f = new createjs.Shape();
-        f.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(3, 3, a - 6, b - 6, 5);
+        f.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(6, 6, a - 12, b - 12, 5);
         var g = new createjs.Shape();
-        g.graphics.beginFill(this.color).drawRoundRect(4, 4, a - 8, b - 8, 5);
+        g.graphics.beginFill(this.color).drawRoundRect(8, 8, a - 16, b - 16, 5);
         this.container.addChild(e, f, g);
         var h = new createjs.Shape();
         switch (this.direction) {
@@ -90,7 +90,7 @@ define("js/sjs/pages/games/squares/squares_Chess", [], function(a, b, c) {
     e.prototype.drawOnAStop = function(a) {
         var b = this.container.getChildAt(1);
         var c = "rgba(" + parseInt(a.substr(1, 2), 16) + ", " + parseInt(a.substr(3, 2), 16) + ", " + parseInt(a.substr(5, 2), 16) + ", 0.8)";
-        b.graphics.clear().beginFill(a).drawRoundRect(3, 3, this.width - 6, this.height - 6, 5);
+        b.graphics.clear().beginFill(a).drawRoundRect(6, 6, this.width - 12, this.height - 12, 5);
         this.container.cache(0, 0, this.width, this.height);
     };
     e.prototype.drawOffAStop = function() {

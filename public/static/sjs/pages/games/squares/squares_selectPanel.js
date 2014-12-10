@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
 
-	var length = 40;
+	var length = 80;
 
 	// 渲染魔板
 	function _showTemplate($domWrapper, $templateId, $data) {
@@ -23,66 +23,68 @@ define(function(require, exports, module) {
 		this.container.removeAllChildren();
 		if(this.hidden == false) {
 			var backShape = new createjs.Shape();
-			backShape.graphics.setStrokeStyle(1, "round").beginFill("#dedbce").drawRoundRect(1, 1, length - 2, length - 2, 3);
+			backShape.graphics.setStrokeStyle(1, "round").beginFill("#dedbce").drawRoundRect(2, 2, length - 4, length - 4, 3);
 
 			var heartShapeLeft = new createjs.Shape();
-			heartShapeLeft.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(24, 15).lineTo(16, 15).arcTo(8, 15, 8, 20, 5).arcTo(8, 25, 13, 25, 5).lineTo(24, 25).closePath();
+			//heartShapeLeft.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(24, 15).lineTo(16, 15).arcTo(8, 15, 8, 20, 5).arcTo(8, 25, 13, 25, 5).lineTo(24, 25).closePath();
+            heartShapeLeft.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(48, 30).lineTo(32, 30).arcTo(16, 30, 16, 40, 10).arcTo(16, 50, 26, 50, 10).lineTo(48, 50).closePath();
 			heartShapeLeft.regX = 0;
 			heartShapeLeft.regY = 0;
 			heartShapeLeft.set({
 				regX: length / 2,
 				regY: length / 2,
 				x: length / 2, 
-				y: length / 2 + 2,
+				y: length / 2 + 4
 			});
 			heartShapeLeft.rotation = 38;
 			var heartShapeRight = new createjs.Shape();
-			heartShapeRight.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(16, 15).lineTo(24, 15).arcTo(32, 15, 32, 20, 5).arcTo(32, 25, 27, 25, 5).lineTo(16, 25).closePath();
+			//heartShapeRight.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(16, 15).lineTo(24, 15).arcTo(32, 15, 32, 20, 5).arcTo(32, 25, 27, 25, 5).lineTo(16, 25).closePath();
+            heartShapeRight.graphics.setStrokeStyle(1, "round").beginFill("rgba(252, 223, 222, 1)").moveTo(32, 30).lineTo(48, 30).arcTo(64, 30, 64, 40, 10).arcTo(64, 50, 54, 50, 10).lineTo(32, 50).closePath();
 			heartShapeRight.regX = 0;
 			heartShapeRight.regY = 0;
 			heartShapeRight.set({
 				regX: length / 2,
 				regY: length / 2,
 				x: length / 2, 
-				y: length / 2 + 2,
+				y: length / 2 + 4
 			});
 			heartShapeRight.rotation = -38;		
 			// 313c42
-			var text = new createjs.Text(this.id, "18px Calibri", "#313c42")
+			var text = new createjs.Text(this.id, "36px Calibri", "#313c42")
 			text.textAlign = "center";
 			text.set({
 				// regX: length / 2,
 				// regY: length / 2,
 				x: length / 2,
-				y: (length - 20 ) / 2
+				y: (length - 40 ) / 2
 			})
 			// this.container.addChild(backShape, heartShapeLeft, heartShapeRight, text);
 			this.container.addChild(backShape, text);
 		}
 		else {
 			var backShape = new createjs.Shape();
-			backShape.graphics.setStrokeStyle(1, "round").beginFill("#dedbce").drawRoundRect(1, 1, length - 2, length - 2, 3);
+			backShape.graphics.setStrokeStyle(1, "round").beginFill("#dedbce").drawRoundRect(2, 2, length - 4, length - 4, 3);
 
 			var heartShapeLeft = new createjs.Shape();
-			heartShapeLeft.graphics.setStrokeStyle(1, "round").beginFill("#313c42").moveTo(24, 15).lineTo(16, 15).arcTo(8, 15, 8, 20, 5).arcTo(8, 25, 13, 25, 5).lineTo(24, 25).closePath();
+			heartShapeLeft.graphics.setStrokeStyle(1, "round").beginFill("#313c42").moveTo(48, 30).lineTo(32, 30).arcTo(16, 30, 16, 40, 10).arcTo(16, 50, 26, 50, 10).lineTo(48, 50).closePath();
 			heartShapeLeft.regX = 0;
 			heartShapeLeft.regY = 0;
 			heartShapeLeft.set({
 				regX: length / 2,
 				regY: length / 2,
 				x: length / 2, 
-				y: length / 2 + 2,
+				y: length / 2 + 4
 			});
 			heartShapeLeft.rotation = 38;
 			var heartShapeRight = new createjs.Shape();
-			heartShapeRight.graphics.setStrokeStyle(1, "round").beginFill("#313c42").moveTo(16, 15).lineTo(24, 15).arcTo(32, 15, 32, 20, 5).arcTo(32, 25, 27, 25, 5).lineTo(16, 25).closePath();
+			heartShapeRight.graphics.setStrokeStyle(1, "round").beginFill("#313c42").moveTo(32, 30).lineTo(48, 30).arcTo(64, 30, 64, 40, 10).arcTo(64, 50, 54, 50, 10).lineTo(32, 50).closePath();
 			heartShapeRight.regX = 0;
 			heartShapeRight.regY = 0;
 			heartShapeRight.set({
 				regX: length / 2,
 				regY: length / 2,
 				x: length / 2, 
-				y: length / 2 + 2,
+				y: length / 2 + 4
 			});
 			heartShapeRight.rotation = -38;
 			this.container.addChild(backShape, heartShapeLeft, heartShapeRight);
@@ -125,9 +127,9 @@ define(function(require, exports, module) {
 	SelectPanel.prototype.__init = function() {
 		_showTemplate($(".select-wrapper"), "setSelectWrapper");
 		selectPanel = new createjs.Stage("canvasSelect");
-		totalWidth = $(".set-select-wrapper").width();
-		totalHeight = $(".set-select-wrapper").height();
-		$("#canvasSelect").prop('width', totalWidth).prop('height', totalHeight);
+		totalWidth = 2 * $(".set-select-wrapper").width();
+		totalHeight = 2 * $(".set-select-wrapper").height();
+		$("#canvasSelect").prop('width', totalWidth).prop('height', totalHeight).css({"width": totalWidth / 2 + "px", "height": totalHeight / 2 + "px"});
 
 		this.container = new createjs.Container();
 		this.sets = [];

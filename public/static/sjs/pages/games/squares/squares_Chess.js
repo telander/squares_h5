@@ -57,12 +57,12 @@ define(function(require, exports, module) {
 		var opacityColor = "rgba(" + parseInt(this.color.substr(1, 2), 16) + ", " + parseInt(this.color.substr(3, 2), 16) + ", " + parseInt(this.color.substr(5, 2), 16) + ", 0.8)";
 		var shape1 = new createjs.Shape();
 		// shape1.graphics.beginLinearGradientFill([this.color, opacityColor, this.color, this.color], [0, 0.5, 0.51, 1], 0, 0, width, height).drawRoundRect(0, 0, width, height, 5);
-		shape1.graphics.beginFill(this.color).drawRoundRect(1, 1, width-2, height-2, 5);
+		shape1.graphics.beginFill(this.color).drawRoundRect(2, 2, width-4, height-4, 5);
 		var shape2 = new createjs.Shape();
-		shape2.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(3, 3, width - 6, height - 6, 5);
+		shape2.graphics.beginFill("rgba(255, 255, 255, 0.95)").drawRoundRect(6, 6, width - 12, height - 12, 5);
 		var shape3 = new createjs.Shape();
 		// shape3.graphics.beginLinearGradientFill([this.color, opacityColor, this.color, this.color], [0, 0.5, 0.51, 1], 3, 3, width - 6, height - 6).drawRoundRect(3, 3, width - 6, height - 6, 5);
-		shape3.graphics.beginFill(this.color).drawRoundRect(4, 4, width - 8, height - 8, 5);
+		shape3.graphics.beginFill(this.color).drawRoundRect(8, 8, width - 16, height - 16, 5);
 
 
 		this.container.addChild(shape1, shape2, shape3);
@@ -118,7 +118,7 @@ define(function(require, exports, module) {
 		var shape2 = this.container.getChildAt(1);
 		var opacityColor = "rgba(" + parseInt(color.substr(1, 2), 16) + ", " + parseInt(color.substr(3, 2), 16) + ", " + parseInt(color.substr(5, 2), 16) + ", 0.8)";
 		// shape2.graphics.clear().beginLinearGradientFill([color, opacityColor, color, color], [0, 0.5, 0.51, 1], 2, 2, this.width - 4, this.height - 4).drawRoundRect(2, 2, this.width - 4, this.height - 4, 5);
-		shape2.graphics.clear().beginFill(color).drawRoundRect(3, 3, this.width - 6, this.height - 6, 5);
+		shape2.graphics.clear().beginFill(color).drawRoundRect(6, 6, this.width - 12, this.height - 12, 5);
 		// if(color == this.color) {
 		// 	newShape.graphics.setStrokeStyle(1, "round").beginStroke(color).drawRoundRect(2, 2, this.width - 4 , this.height - 4, 5);
 		// }
